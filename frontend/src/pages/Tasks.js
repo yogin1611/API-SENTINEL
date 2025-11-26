@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import API_BASE_URL from "../api";
 
 const Tasks = () => {
   const [tasks, setTasks] = useState([]);
@@ -11,11 +12,10 @@ const Tasks = () => {
   const token = localStorage.getItem("token");
 
   const api = axios.create({
-    baseURL: "http://localhost:4000/api/v1",
+    baseURL: `${API_BASE_URL}/api/v1`,
     headers: { Authorization: `Bearer ${token}` }
   });
 
-  // Fetch all tasks when page loads
   const loadTasks = async () => {
     try {
       const res = await api.get("/tasks");
@@ -29,7 +29,6 @@ const Tasks = () => {
     loadTasks();
   }, []);
 
-  // Create new task
   const handleCreate = async (e) => {
     e.preventDefault();
 
@@ -42,7 +41,6 @@ const Tasks = () => {
     }
   };
 
-  // Mark task as completed
   const markComplete = async (id) => {
     try {
       await api.patch(`/tasks/${id}`, { completed: true });
@@ -52,7 +50,6 @@ const Tasks = () => {
     }
   };
 
-  // Delete a task
   const deleteTask = async (id) => {
     try {
       await api.delete(`/tasks/${id}`);
@@ -66,7 +63,6 @@ const Tasks = () => {
     <div style={styles.container}>
       <h2>Your Tasks</h2>
 
-      {/* Create Task Form */}
       <form onSubmit={handleCreate} style={styles.form}>
         <input
           type="text"
@@ -89,7 +85,6 @@ const Tasks = () => {
         <button type="submit" style={styles.button}>Add Task</button>
       </form>
 
-      {/* Task List */}
       <ul style={styles.list}>
         {tasks.map((task) => (
           <li key={task.id} style={styles.taskItem}>

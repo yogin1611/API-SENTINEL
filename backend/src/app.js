@@ -10,8 +10,18 @@ const swaggerJsdoc = require('swagger-jsdoc');
 
 const app = express();
 
-// Middleware
-app.use(cors());
+// CORS (Production safe)
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "https://api-sentinel-seven.vercel.app/"  // <-- replace with your Vercel URL
+    ],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+
 app.use(express.json());
 
 // Swagger Setup
@@ -23,7 +33,10 @@ const swaggerOptions = {
       version: "1.0.0",
       description: "REST API with JWT Auth & CRUD"
     },
-    servers: [{ url: "http://localhost:4000" }]
+    servers: [
+      { url: "http://localhost:4000" },
+      { url: "https://api-sentinel-muqc.onrender.com/" }  // (optional)
+    ]
   },
   apis: ["./src/routes/*.js"],
 };
