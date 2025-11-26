@@ -1,5 +1,4 @@
-backend/node_modules/
-backend/database.sqlite
-*.log
-frontend/node_modules/
-backend/.env
+node_modules/
+database.sqlite/
+*.log/
+.env/
