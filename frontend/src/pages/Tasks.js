@@ -21,8 +21,9 @@ const Tasks = () => {
       const res = await api.get("/tasks");
       setTasks(res.data);
     } catch (err) {
-      console.error(err);
-    }
+  console.error("CREATE TASK ERROR:", err.response?.data || err);
+  alert("Error: " + (err.response?.data?.message || "Task creation failed"));
+}
   };
 
   useEffect(() => {
