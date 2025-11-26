@@ -15,7 +15,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "https://api-sentinel-seven.vercel.apps"  // <-- correct Vercel origin
+      "https://api-sentinel-seven.vercel.app"  // <-- correct Vercel origin
     ],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
