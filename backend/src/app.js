@@ -15,12 +15,13 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "https://api-sentinel-seven.vercel.app/"  // <-- replace with your Vercel URL
+      "https://api-sentinel-jpy76iqo8-yogin1611s-projects.vercel.app"  // <-- correct Vercel origin
     ],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
 
 app.use(express.json());
 
