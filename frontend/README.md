@@ -1,3 +1,26 @@
+<p align="center">
+
+  <!-- Project Status -->
+  <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge" />
+
+  <!-- Tech Stack -->
+  <img src="https://img.shields.io/badge/Backend-Node.js-green?style=for-the-badge&logo=node.js" />
+  <img src="https://img.shields.io/badge/Frontend-React-blue?style=for-the-badge&logo=react" />
+  <img src="https://img.shields.io/badge/Auth-JWT-orange?style=for-the-badge&logo=jsonwebtokens" />
+  <img src="https://img.shields.io/badge/Database-SQLite-lightgrey?style=for-the-badge&logo=sqlite" />
+  <img src="https://img.shields.io/badge/ORM-Sequelize-blue?style=for-the-badge&logo=sequelize" />
+
+  <!-- Hosting (optional for later) -->
+  <img src="https://img.shields.io/badge/Hosting-Render-purple?style=for-the-badge&logo=render" />
+  <img src="https://img.shields.io/badge/Frontend-Netlify-teal?style=for-the-badge&logo=netlify" />
+
+  <!-- Tools -->
+  <img src="https://img.shields.io/badge/Version_Control-Git-orange?style=for-the-badge&logo=git" />
+  <img src="https://img.shields.io/badge/IDE-VSCode-blue?style=for-the-badge&logo=visualstudiocode" />
+
+</p>
+
+
 # 📘 API Sentinel — Full Stack Authentication & Task Manager
 
 A secure and scalable full-stack project built with:

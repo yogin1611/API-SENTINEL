@@ -1,30 +1,23 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../config/db');
+const { DataTypes, Model } = require("sequelize");
 
-const Task = sequelize.define('Task', {
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true,
-  },
-  title: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  description: {
-    type: DataTypes.TEXT,
-    allowNull: true,
-  },
-  completed: {
-    type: DataTypes.BOOLEAN,
-    defaultValue: false,
-  },
-  userId: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
+class Task extends Model {
+  static initModel(sequelize) {
+    Task.init(
+      {
+        title: DataTypes.STRING,
+        description: DataTypes.STRING,
+        completed: {
+          type: DataTypes.BOOLEAN,
+          defaultValue: false
+        }
+      },
+      {
+        sequelize,
+        modelName: "Task",
+        tableName: "tasks"
+      }
+    );
   }
-}, {
-  timestamps: true,
-});
+}
 
 module.exports = Task;

@@ -1,22 +1,8 @@
-const sequelize = require('../config/db');
-const User = require('./user');
-const Task = require('./task');
+const sequelize = require("../config/database");
+const User = require("./user");
+const Task = require("./task");
 
-// A user *has many* tasks
-User.hasMany(Task, {
-  foreignKey: 'userId',
-  as: 'tasks',
-  onDelete: 'CASCADE'
-});
+User.initModel(sequelize);
+Task.initModel(sequelize);
 
-// A task *belongs to* a user
-Task.belongsTo(User, {
-  foreignKey: 'userId',
-  as: 'user'
-});
-
-module.exports = {
-  sequelize,
-  User,
-  Task
-};
+module.exports = { sequelize, User, Task };
